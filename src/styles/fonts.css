@@ -1,0 +1,89 @@
+
+/*
+    the variations are
+    1. black
+    2. bold
+    3. extra bold
+    4. light
+    5. extra light
+    6. medium
+    7. regular
+    8. semi bold
+    9. thin
+
+    the font real name is LeagueSpartan
+
+*/
+
+
+/* black */
+@font-face {
+  font-family: "Spartan";
+  src: url("/fonts/static/LeagueSpartan-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* bold */
+@font-face {
+  font-family: "Spartan";
+  src: url("/fonts/static/LeagueSpartan-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* extra bold */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;   
+}
+
+/* light */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* extra light */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* medium */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* regular */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* semi bold */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* thin */
+@font-face {
+  font-family: "Spartan", sans-serif;
+  src: url("/fonts/static/LeagueSpartan-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}

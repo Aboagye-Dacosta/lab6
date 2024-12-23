@@ -1,0 +1,14 @@
+.headline {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Desktop screens */
+@media screen and (min-width: 57.45em) {
+  .headline {
+    font-size: 32px;
+  }
+}

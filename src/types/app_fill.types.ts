@@ -1,0 +1,1 @@
+export type BackgroundColor = "bg-white" | "bg-primary" | "bg-secondary" | "bg-tertiary" | "bg-base-black" | "transparent";

@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.nav_actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 100%;
+}
+
+.nav_divider {
+  height: 100%;
+  width: 1px;
+  background-color: #494e6e;
+}
+
+/* 
+    nav styles for screen bigger than tablet
+*/
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .nav_actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: max-content;
+  }
+
+  .nav_divider {
+    height: 1px;
+    width: 100%;
+  }
+}

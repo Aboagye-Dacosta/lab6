@@ -1,0 +1,44 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.icon-circle {
+  border-radius: 50%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.icon-white {
+  background-color: #ffffff;
+}
+
+.x-small {
+  width: 19.99px;
+  height: 19.99px;
+}
+
+.small {
+  width: 32px;
+  height: 32px;
+}
+
+.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.large {
+  width: 64px;
+  height: 64px;
+}
+
+.x-large {
+  height: 90px;
+  width: 90px;
+}

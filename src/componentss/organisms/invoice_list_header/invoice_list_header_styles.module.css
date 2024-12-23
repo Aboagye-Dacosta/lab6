@@ -1,0 +1,28 @@
+.invoice_list_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoiceFilter {
+  display: flex;
+  gap: 10px;
+}
+
+.invoice_count_sm {
+    display: block;
+}
+
+.invoice_count_lg {
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .invoice_count_sm {
+    display: none;
+  }
+
+  .invoice_count_lg {
+    display: block;
+  }
+}

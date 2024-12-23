@@ -1,0 +1,24 @@
+.app_outlet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10rem 20px;
+}
+
+.app_outlet > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+@media (min-width: 57.25em) {
+  .app_outlet {
+    padding: 10rem 10px 10rem;
+  }
+  .app_outlet > div {
+    width: 730px;
+  }
+}

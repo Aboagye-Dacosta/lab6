@@ -1,0 +1,62 @@
+/*
+ -- Pending 
+  color: #FF8F00;
+  bg-color - opacity: 
+
+*/
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 8px;
+  width: 104px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.badge-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.badge-pending {
+  background-color: rgba(255, 143, 0, 0.0571);
+}
+
+.badge-pending-indicator {
+  background-color: #ff8f00;
+}
+
+.badge-pending-text {
+  color: #ff8f00;
+}
+
+.badge-paid {
+  background-color: rgba(51, 214, 159, 0.0571);
+}
+
+.badge-paid-indicator {
+  background-color: #33d69f;
+}
+
+.badge-paid-text {
+  color: #33d69f;
+}
+
+.badge-draft {
+  background-color: rgba(223, 227, 250, 0.0571);
+}
+
+.badge-draft-indicator {
+  background-color: #dfe3fa;
+}
+
+.badge-draft-text {
+  color: #dfe3fa;
+}

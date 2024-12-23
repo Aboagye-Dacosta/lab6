@@ -1,0 +1,157 @@
+@import url("./fonts.css");
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+aside,
+footer,
+header,
+nav,
+ruby,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#theme {
+  --primary-color: #7c5dfa;
+  --secondary-color: #1e2139;
+  --tertiary-color: #7e88c3;
+  --error-color: #ec5757;
+  --grey-color: #dfe3fa;
+  --base-black-color: #0c0e16;
+  --dark-bg-color: #141625;
+  --light-bg-color: #f8f8fb;
+  --purple-color: #9277ff;
+  --dark-purple-color: #252945;
+  --light-purple-color: #888eb0;
+  --lightest-purple-color: #f8f8fb;
+  --screen: 1440px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+}
+
+#theme,
+#theme[data-theme="light"] {
+  --background-color: var(--light-bg-color);
+  --text-color: var(--base-black-color);
+  --primary-color: var(--primary-color);
+  --secondary-color: var(--light-bg-color);
+  --theme-grey: var(--light-purple-color);
+}
+
+#theme[data-theme="dark"] {
+  --theme-grey: var(--grey-color);
+  --background-color: var(--dark-bg-color);
+  --text-color: var(--lightest-purple-color);
+  --primary-color: var(--purple-color);
+  --secondary-color: var(--dark-purple-color);
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  line-height: 1.7;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 320px) {
+  :root {
+    --screen: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --screen: 768px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --screen: 1024px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --screen: 1440px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    --screen: 1920px;
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+  height: 90px;
+  background-color: #1e2139;
+  padding: 0 20px 0 0;
+  display: flex;
+}
+
+/*  
+    header styles for screen sizes bigger than tablet
+*/
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    padding: 0 0 20px 0;
+  }
+}
