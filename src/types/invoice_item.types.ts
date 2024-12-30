@@ -5,7 +5,7 @@ export interface InvoiceCardProps {
 export interface ProductStatus {
     id: string;
     createdAt: string;
-    paymentDue: Date;
+    paymentDue: Date | string;
     description: string;
     paymentTerms: number;
     clientName: string;
