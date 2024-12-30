@@ -72,7 +72,7 @@ const InvoiceDetailBody: React.FC = () => {
                 Payment Due
               </Text>
               <Text size="text-2xl" color="theme-black">
-                {convertToFormattedDate(paymentDue)}
+                {convertToFormattedDate(paymentDue as string)}
               </Text>
             </div>
           </div>
