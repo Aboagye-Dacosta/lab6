@@ -5,7 +5,7 @@ import styles from "./head_line_styles.module.css";
 const Headline: React.FC<PropsWithChildren<HeadLineProps>> = ({
   children,
   as = "h1",
-  color = "primary",
+  color = "base-black",
   className = "",
   weight = "weight-400",
 }) => {
