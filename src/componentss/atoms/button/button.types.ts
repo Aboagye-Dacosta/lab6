@@ -7,4 +7,5 @@ export interface ButtonProps {
     size?: ButtonSizes;
     icon?: string;
     onClick: () => void;
+    type?: "button" | "submit" | "reset";
 }

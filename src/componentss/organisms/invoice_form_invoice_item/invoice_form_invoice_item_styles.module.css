@@ -1,0 +1,41 @@
+.action {
+  height: 100%;
+}
+
+.action > button {
+  align-self: flex-end;
+}
+
+.lg {
+  display: none;
+}
+
+.sm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+
+}
+
+.row > * {
+  flex: 1;
+}
+
+@media (min-width: 57.25em) {
+  .lg {
+    display: table-row;
+    width: 100%;
+  }
+  .sm {
+    display: none;
+  }
+}

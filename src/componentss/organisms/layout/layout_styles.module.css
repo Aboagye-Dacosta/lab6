@@ -1,3 +1,12 @@
 .layout {
-  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
 }

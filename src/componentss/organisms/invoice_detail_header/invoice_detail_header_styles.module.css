@@ -1,0 +1,30 @@
+.invoice_detail_header {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 8px;
+}
+
+.actions {
+    display: none;
+    align-items: center;
+    gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .status {
+    justify-content: flex-start;
+    flex: auto;
+  }
+  .actions {
+    display: flex;
+  }
+}

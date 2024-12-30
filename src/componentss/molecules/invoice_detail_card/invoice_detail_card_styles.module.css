@@ -1,0 +1,102 @@
+.card {
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
+}
+
+.card_data {
+  padding: 23px;
+}
+
+[data-theme="light"] .card {
+  background: #f9fafe;
+}
+
+[data-theme="dark"] .card {
+  background: #252945;
+}
+.total {
+  padding: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-theme="light"] .total {
+  background: #373b53;
+}
+
+[data-theme="dark"] .total {
+  background: #0c0e16;
+}
+
+[data-theme="dark"]  .th {
+  color: #dfe3fa;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+[data-theme="dark"] .td {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+[data-theme="dark"]  .td:nth-of-type(2) {
+  color: #DFE3FA;
+}
+
+
+
+table {
+  width: 100%;
+  padding: 23px;
+}
+
+table,
+td:not(:first-of-type),
+table th:not(:first-of-type) {
+  text-align: right;
+}
+
+table th:nth-of-type(2),
+table td:nth-of-type(2) {
+  text-align: center;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.lg {
+  display: none;
+}
+
+
+.sm {
+  display: flex;
+  flex-direction: column;
+  gap:20px ;
+}
+
+ .card_m {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_m > div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 57.25em) {
+  .lg { 
+    display: table;
+    width: 100%;
+  }
+
+  .sm {
+    display: none;
+  }
+}

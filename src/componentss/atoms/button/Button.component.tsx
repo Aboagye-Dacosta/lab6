@@ -10,13 +10,15 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   onClick,
   variant = "primary",
   size = "medium",
+  type = "button",
   icon,
 }) => {
   const { theme } = useAppSelector(getTheme);
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={`${styles["button-" + variant + "-" + theme]} ${
+      className={`${styles.button} ${styles["button-" + variant + "-" + theme]} ${
         styles["button-" + size]
       }`}
     >

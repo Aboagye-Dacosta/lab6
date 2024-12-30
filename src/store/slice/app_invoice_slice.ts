@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { ProductStatus } from "../../componentss/molecules/invoice_card/invoice_card.types";
 import data from "../../data/data.json";
+import { ProductStatus } from "../../types/invoice_item.types";
 
 const initialState: ProductStatus[] = [
     ...(data as unknown as ProductStatus[]),
@@ -22,12 +22,18 @@ const appInvoiceSlice = createSlice({
         },
         deleteInvoice: (state, action) => {
             return state.filter(invoice => invoice.id !== action.payload)
+        },
+        updateInvoiceStatus: (state, action) => {
+            const index = state.findIndex(invoice => invoice.id === action.payload.id)
+            state[index].status = action.payload.status
         }
 
     }
 })
 
-export const { saveInvoice, updateInvoice, deleteInvoice } = appInvoiceSlice.actions;
+export const { saveInvoice, updateInvoice, deleteInvoice, updateInvoiceStatus } = appInvoiceSlice.actions;
 export const getInvoices = (state: RootState) => state.invoices;
+
+export const getInvoiceById = (invoiceId: string) => (state: RootState) => state.invoices.find(invoice => invoice.id === invoiceId);
 
 export default appInvoiceSlice.reducer;

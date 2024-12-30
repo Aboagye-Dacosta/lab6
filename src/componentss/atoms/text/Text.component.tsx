@@ -4,9 +4,9 @@ import styles from "./text_styles.module.css";
 
 const Text: React.FC<PropsWithChildren<TextProps>> = ({
   children,
-  color = "base-black",
+  color = "theme-black",
   as = "span",
-  weight = "regular",
+  weight = "weight-400",
   size = "text-sm",
   className,
 }) => {

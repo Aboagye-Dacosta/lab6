@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
   }, [theme]);
 
   return (
-    <div id="theme" className={styles.layout} ref={ref}>
+    <div id="theme" className={styles.layout} ref={ref} data-theme={theme}>
       <Header />
       <AppOutlet />
     </div>

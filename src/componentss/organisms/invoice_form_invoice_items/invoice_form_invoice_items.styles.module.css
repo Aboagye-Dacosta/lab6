@@ -1,0 +1,24 @@
+.table th {
+  color: var(--theme-grey);
+}
+
+.lg {
+  display: none;
+}
+
+.sm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 57.25em) {
+  .lg {
+    display: table;
+    width: 100%;
+  }
+  .sm {
+    display: none;
+  }
+}

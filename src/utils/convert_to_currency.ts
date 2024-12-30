@@ -1,16 +1,19 @@
-export const convertToCurrency = (value: number, currency: string = 'EUR') => {
+export const convertToCurrency = (value: number) => {
     if (isNaN(value)) {
         return 'Invalid amount';
     }
 
     try {
-        return new Intl.NumberFormat('de-DE', {
+        // Get the user's locale from the browser
+        const userLocale = navigator.language || 'en-US'; // Fallback to 'en-US' if locale isn't available
+
+        return  "£" + new Intl.NumberFormat(userLocale, {
             style: 'currency',
-            currency: currency,
+            currency: 'USD',
             minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }).format(value);
+            maximumFractionDigits: 2,
+        }).format(value).split('$')[1];
     } catch {
         return 'Invalid currency format';
     }
-}
+};

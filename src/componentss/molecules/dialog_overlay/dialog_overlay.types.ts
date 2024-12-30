@@ -4,4 +4,5 @@ export interface DialogOverlayProps {
   zIndex?: number;
   onClose: () => void;
   children?: React.ReactNode;
+  theme?: "light" | "dark";
 }

@@ -1,7 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
-import { routes } from "./routes";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "../componentss/organisms/layout/Layout.component";
-import HomeView from "../views/HomeView";
+import InvoiceDetail from "../views/InvoiceDetail";
+import InvoiceListings from "../views/InvoiceListings";
+import { routes } from "./routes";
 
 export const router = createBrowserRouter([
   {
@@ -10,7 +11,15 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomeView />,
+        element: <Navigate to={routes.invoices} replace />,
+      },
+      {
+        path: routes.invoices,
+        element: <InvoiceListings />,
+      },
+      {
+        path: routes.invoiceById,
+        element: <InvoiceDetail />,
       },
     ],
   },

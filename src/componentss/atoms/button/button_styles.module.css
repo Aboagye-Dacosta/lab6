@@ -1,4 +1,4 @@
-button {
+.button {
   height: 48px;
   border: none;
   border-radius: 24px;
@@ -14,11 +14,17 @@ button {
 }
 
 .button-large {
-  width: 350px;
+  width: 100%;
 }
 
 .button-medium {
-  width: 150px;
+  width: 110px;
+}
+
+@media screen and (min-width: 768px) {
+  .button-medium {
+    width: 150px;
+  }
 }
 
 .button-small {

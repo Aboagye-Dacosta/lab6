@@ -1,24 +1,22 @@
 .app_outlet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
   width: 100%;
-  padding: 10rem 20px;
+  height: 100vh;
+  position: relative;
+  overflow-y: auto;
 }
 
 .app_outlet > div {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 33px;
+  padding:5rem 20px 15rem;
+  margin: 0 auto;
 }
 
 @media (min-width: 57.25em) {
-  .app_outlet {
-    padding: 10rem 10px 10rem;
-  }
   .app_outlet > div {
-    width: 730px;
+    max-width: 930px;
   }
 }

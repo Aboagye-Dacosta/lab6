@@ -1,0 +1,27 @@
+.flatpickr-calendar {
+    background-color: #f9f9f9; /* Match your theme's background */
+    border: 1px solid #ccc;    /* Border color */
+    border-radius: 8px;        /* Rounded corners */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+.flatpickr-day {
+    color: #333;               /* Text color */
+    font-size: 14px;           /* Font size */
+    border-radius: 50%;        /* Circular days */
+}
+
+.flatpickr-day:hover {
+    background-color: #007BFF; /* Highlight on hover */
+    color: #fff;               /* Text color on hover */
+}
+
+.flatpickr-day.today {
+    background-color: #28a745; /* Highlight today */
+    color: #fff;
+}
+
+.flatpickr-day.selected {
+    background-color: #007BFF; /* Highlight selected date */
+    color: #fff;
+}

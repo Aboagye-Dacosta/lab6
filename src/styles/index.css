@@ -67,6 +67,14 @@ table {
   border-spacing: 0;
 }
 
+
+a,
+a:hover,a:active {
+  text-decoration: none ;
+}
+
+
+
 #theme {
   --primary-color: #7c5dfa;
   --secondary-color: #1e2139;
@@ -94,8 +102,8 @@ table {
 #theme[data-theme="light"] {
   --background-color: var(--light-bg-color);
   --text-color: var(--base-black-color);
-  --primary-color: var(--primary-color);
-  --secondary-color: var(--light-bg-color);
+  --primary-color: var(--purple-color);
+  --secondary-color: #fff;
   --theme-grey: var(--light-purple-color);
 }
 
