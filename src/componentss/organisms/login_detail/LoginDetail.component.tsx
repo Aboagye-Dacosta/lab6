@@ -1,28 +1,27 @@
 import { useForm } from "react-hook-form";
-import { UserCredentials } from "./login_detail.types";
-import Container from "../../atoms/container/Container.component";
-import InputLabel from "../../atoms/input_label/InputLabel.component";
 import Button from "../../atoms/button/Button.component";
+import Container from "../../atoms/container/Container.component";
 import Headline from "../../atoms/head_line/Headline.component";
+import InputLabel from "../../atoms/input_label/InputLabel.component";
+import { UserCredentials } from "./login_detail.types";
 
-import styles from "./login_detail_styles.module.css";
 import { useLoginUser } from "../../../hooks/useLoginUser";
-
+import styles from "./login_detail_styles.module.css";
 
 const LoginDetail: React.FC = () => {
-    const { isLoading, mutate } = useLoginUser()
-    
+  const { isLoading, mutate } = useLoginUser();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<UserCredentials>();
-    
+
   const handleFormSubmit = (data: UserCredentials) => {
     console.log(data);
-    mutate(data)
+    mutate(data);
   };
-    
+
   return (
     <div className={styles.login_detail}>
       <Container>

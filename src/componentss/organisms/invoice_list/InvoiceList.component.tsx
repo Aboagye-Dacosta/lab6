@@ -13,12 +13,7 @@ const InvoiceList: React.FC = () => {
   const { filters } = useAppSelector(getFilters);
 
   return (
-    <div className={styles.invoice_list}>
-      {/* {invoices.length === 0 ? (
-        <div className={styles.empty_invoices}>
-          <img src="/assets/illustration-empty.svg" alt="empty invoices" />
-        </div>
-      ) : ( */}
+    <div className={styles.invoice_list}> 
       <Filter
         data={invoices as unknown as DataSource[]}
         filterKey="status"

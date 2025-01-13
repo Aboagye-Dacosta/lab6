@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSessionStorageState } from "./useSessionStorageState";
-import { routes } from "../router/routes";
 import { useNavigate } from "react-router-dom";
 import { UserCredentials } from "../componentss/organisms/login_detail/login_detail.types";
 import { Environments } from "../environment";
+import { routes } from "../router/routes";
+import { useSessionStorageState } from "./useSessionStorageState";
 
-export const useLoginUser = () =>{
-    
+export const useLoginUser = () => {
+
     const navigate = useNavigate();
 
     const [token, setToken] = useSessionStorageState("", "token");
