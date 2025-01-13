@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
+import InvoiceForm from "../invoice_form/invoice_form.component";
 import styles from "./app_outlet_styles.module.css";
-import InvoiceForm from "../invoice_form/InvoiceForm.component";
 
 const AppOutlet: React.FC = () => {
   return (

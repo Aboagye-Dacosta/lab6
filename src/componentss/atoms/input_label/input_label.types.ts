@@ -4,4 +4,5 @@ export interface InputLabelProps {
     error?: string;
     input: React.ReactNode;
     isStyled?: boolean;
+    labelLg?: boolean;
 }

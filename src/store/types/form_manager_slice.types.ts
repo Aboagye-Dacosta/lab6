@@ -6,5 +6,6 @@ export enum FormActionType {
 export interface FormManager {
     formState: "open" | "closed",
     formActionType: FormActionType,
+    isDraft: boolean
 }
 

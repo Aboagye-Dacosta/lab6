@@ -16,6 +16,7 @@ const Select: React.FC<SelectProps> = ({ styles, ...props }) => {
         input: (styles) => ({
           ...styles,
           color: "var(--text-color)",
+          fontWeight: "normal",
           width: "100%",
         }),
         control: (props) => ({
@@ -37,7 +38,8 @@ const Select: React.FC<SelectProps> = ({ styles, ...props }) => {
           backgroundColor: isSelected
             ? "var(--primary-color)"
             : "var(--color-grey-0)",
-          color: (() => "var(--text-color)")(),
+          color: "var(--text-color)",
+          fontWeight: "normal",
           borderBottom: "1px solid black",
           ":hover": {
             backgroundColor: "var(--primary-color)",

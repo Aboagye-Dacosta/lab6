@@ -5,3 +5,23 @@
   width: 100%;
 }
 
+.invoice_empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.invoice_empty > * {
+  width: 30rem;
+}
+
+.empty_list_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

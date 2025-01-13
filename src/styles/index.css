@@ -67,13 +67,11 @@ table {
   border-spacing: 0;
 }
 
-
 a,
-a:hover,a:active {
-  text-decoration: none ;
+a:hover,
+a:active {
+  text-decoration: none;
 }
-
-
 
 #theme {
   --primary-color: #7c5dfa;
@@ -115,6 +113,9 @@ a:hover,a:active {
   --secondary-color: var(--dark-purple-color);
 }
 
+input {
+  color: var(--text-color);
+}
 html {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
@@ -132,34 +133,4 @@ body {
   font-family: "Spartan", sans-serif;
   line-height: 1.7;
   font-size: 1.6rem;
-}
-
-@media screen and (min-width: 320px) {
-  :root {
-    --screen: 320px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  :root {
-    --screen: 768px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  :root {
-    --screen: 1024px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  :root {
-    --screen: 1440px;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  :root {
-    --screen: 1920px;
-  }
 }

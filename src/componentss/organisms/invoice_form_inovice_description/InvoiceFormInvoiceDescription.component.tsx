@@ -11,15 +11,15 @@ import Select from "../../atoms/select/Select.component";
 const options = [
   {
     label: "Net 1 Day",
-    value: "Net 1 Day",
+    value: 1,
   },
   {
     label: "Net 7 Days",
-    value: "Net 7 Days",
+    value: 7,
   },
   {
-    label: "Net 14 Days",
-    value: "Net 14 Days",
+    label: "Net 30 Days",
+    value: 30,
   },
 ];
 
@@ -49,8 +49,8 @@ const InvoiceFormInvoiceDescription: React.FC = () => {
           }
         />
         <InputLabel
-          id="createdAt"
-          error={errors.clientAddress?.country?.message}
+          id="paymentTerms"
+          error={errors.paymentTerms?.message}
           label="Invoice Date"
           input={
             <ControlledSelect

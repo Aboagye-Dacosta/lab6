@@ -47,8 +47,8 @@ const InvoiceDetailCard: React.FC<{ invoice: InvoiceDetailCardProps[] }> = ({
         </div>
       </div>
       <div className={styles.total}>
-        <Text>Amount Due</Text>
-        <Text>
+        <Text color="grey">Amount Due</Text>
+        <Text color="white" size="text-2xl">
           {convertToCurrency(
             invoice.reduce((acc, item) => acc + item.total, 0)
           )}

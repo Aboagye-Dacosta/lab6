@@ -2,6 +2,11 @@
   color: var(--theme-grey);
 }
 
+.table thead th {
+  display: none;
+
+}
+
 .lg {
   display: none;
 }
@@ -20,5 +25,9 @@
   }
   .sm {
     display: none;
+  }
+
+  .table thead th {
+    display: table-cell;
   }
 }

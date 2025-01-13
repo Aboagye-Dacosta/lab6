@@ -8,4 +8,5 @@ export interface FilterProps {
     filterKey: string;
     options: string[];
     render: (data: DataSource) => JSX.Element;
+    fallback: React.ReactNode
 }

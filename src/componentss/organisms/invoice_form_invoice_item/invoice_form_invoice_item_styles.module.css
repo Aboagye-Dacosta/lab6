@@ -1,3 +1,27 @@
+.invoice_item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+td > div {
+  width: 50px;
+}
+
+td:first-of-type > div {
+  width: 300px;
+}
+
+
+
+
+.invoice_item_total {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .action {
   height: 100%;
 }
@@ -23,7 +47,6 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-
 }
 
 .row > * {
@@ -31,11 +54,7 @@
 }
 
 @media (min-width: 57.25em) {
-  .lg {
+  .invoice_item {
     display: table-row;
-    width: 100%;
-  }
-  .sm {
-    display: none;
   }
 }

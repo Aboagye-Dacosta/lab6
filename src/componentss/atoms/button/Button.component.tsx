@@ -11,6 +11,7 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   variant = "primary",
   size = "medium",
   type = "button",
+  disabled = false,
   icon,
 }) => {
   const { theme } = useAppSelector(getTheme);
@@ -18,6 +19,7 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={`${styles.button} ${styles["button-" + variant + "-" + theme]} ${
         styles["button-" + size]
       }`}

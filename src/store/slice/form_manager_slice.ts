@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { FormActionType, FormManager } from "../types/form_manager_slice.types";
 import { RootState } from "..";
+import { FormActionType, FormManager } from "../types/form_manager_slice.types";
 
 
 const initialState: FormManager = {
     formState: "closed",
-    formActionType: FormActionType.DEFAULT
-
+    formActionType: FormActionType.DEFAULT,
+    isDraft: false
 
 }
 const name = "formManager"
@@ -19,6 +19,9 @@ const formManagerSlice = createSlice({
         },
         setFormActionType: (state, action) => {
             state.formActionType = action.payload
+        },
+        setIsDraft: (state, action) => {
+            state.isDraft = action.payload
         }
 
     }
@@ -27,6 +30,8 @@ const formManagerSlice = createSlice({
 
 export const { toggleForm, setFormActionType } = formManagerSlice.actions;
 
-export const getFormState = (state:RootState)=> state.formState.formState;
+export const getFormState = (state: RootState) => state.formState.formState;
+export const getFormActionType = (state: RootState) => state.formState.formActionType;
+export const getIsDraft = (state: RootState) => state.formState.isDraft;
 
 export default formManagerSlice.reducer;

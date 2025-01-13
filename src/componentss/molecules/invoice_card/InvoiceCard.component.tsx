@@ -35,13 +35,15 @@ const InvoiceCard: React.FC<InvoiceCardProps> = ({ invoice }) => {
             <Text color="theme-grey" weight="weight-400" size="text-xs">
               {formattedDate}
             </Text>
-            <Text color="theme-black" weight="weight-700" size="text-md">
-              {formattedTotal}
+            <Text color="theme-grey" size="text-md">
+              {clientName}
             </Text>
           </div>
         </div>
         <div className={styles.invoice_state}>
-          <Text color="theme-grey">{clientName}</Text>
+          <Text color="theme-black" weight="weight-700" size="text-sm">
+            {formattedTotal}
+          </Text>
           <Badge state={badgeState} />
         </div>
         <span className={styles.invoice_arrow}>

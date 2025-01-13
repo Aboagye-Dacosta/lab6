@@ -1,6 +1,5 @@
 import { PropsWithChildren } from "react";
 import { TextProps } from "./text.types";
-import styles from "./text_styles.module.css";
 
 const Text: React.FC<PropsWithChildren<TextProps>> = ({
   children,
@@ -9,9 +8,10 @@ const Text: React.FC<PropsWithChildren<TextProps>> = ({
   weight = "weight-400",
   size = "text-sm",
   className,
+  align = "left",
 }) => {
   const Element = as;
-  const combinedClasses = [`text-${color}`, styles[weight], size, className]
+  const combinedClasses = [`text-${color}`, weight, size, className, align]
     .filter(Boolean)
     .join(" ");
 

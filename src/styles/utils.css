@@ -15,6 +15,10 @@
   font-weight: 700;
 }
 
+.text-white {
+  color: white;
+}
+
 /* colors */
 .text-primary {
   color: var(--primary-color);
@@ -120,7 +124,7 @@
 */
 
 .text-xs {
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 
 .text-sm {
@@ -145,4 +149,17 @@
 
 .text-3xl {
   font-size: 2.6rem;
+}
+
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }

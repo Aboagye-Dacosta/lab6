@@ -1,13 +1,31 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { Item } from "../../../types/invoice_item.types";
 import Button from "../../atoms/button/Button.component";
 import FormFieldset from "../../atoms/form_fieldset/FormFieldset.component";
 import InvoiceFormInvoiceItem from "../invoice_form_invoice_item/InvoiceFormInvoiceItem.component";
-import { InvoiceFormInvoiceItem as InvoiceItemType } from "./invoice_form_invoice_items.types";
 import styles from "./invoice_form_invoice_items.styles.module.css";
+import { InvoiceFormInvoiceItem as InvoiceItemType } from "./invoice_form_invoice_items.types";
 
-const InvoiceFormInvoiceItems: React.FC = () => {
-  const [items, setItems] = useState<InvoiceItemType[]>([]);
+const InvoiceFormInvoiceItems: React.FC<{ initialItems?: Item[] }> = ({
+  initialItems = [],
+}) => {
+  const createItem = (_: Item, i: number) => {
+    const id = nanoid();
+    return {
+      component: (
+        <InvoiceFormInvoiceItem
+          id={id}
+          index={i}
+          handleDelete={() => handleRemoveItem(id)}
+        />
+      ),
+      key: id,
+    };
+  };
+  const [items, setItems] = useState<InvoiceItemType[]>(
+    initialItems.map(createItem)
+  );
 
   const handleRemoveItem = (id: string) => {
     setItems((items) => items.filter((itm) => itm.key !== id));
@@ -33,7 +51,7 @@ const InvoiceFormInvoiceItems: React.FC = () => {
 
   return (
     <FormFieldset caption="Item List">
-      <table className={`${styles.table} ${styles.lg}`}>
+      <table className={`${styles.table}`}>
         <thead>
           <tr>
             <th>Item Name</th>

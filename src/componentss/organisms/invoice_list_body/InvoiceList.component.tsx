@@ -6,6 +6,7 @@ import { getInvoices } from "../../../store/slice/app_invoice_slice";
 import { useAppSelector } from "../../../store/store_hooks";
 import { ProductStatus } from "../../../types/invoice_item.types";
 import { DataSource } from "../../atoms/filter/filter.type";
+import Text from "../../atoms/text/Text.component";
 import InvoiceCard from "../../molecules/invoice_card/InvoiceCard.component";
 
 const InvoiceList: React.FC = () => {
@@ -14,11 +15,6 @@ const InvoiceList: React.FC = () => {
 
   return (
     <div className={styles.invoice_list}>
-      {/* {invoices.length === 0 ? (
-        <div className={styles.empty_invoices}>
-          <img src="/assets/illustration-empty.svg" alt="empty invoices" />
-        </div>
-      ) : ( */}
       <Filter
         data={invoices as unknown as DataSource[]}
         filterKey="status"
@@ -27,8 +23,21 @@ const InvoiceList: React.FC = () => {
           const inv = invoice as unknown as ProductStatus;
           return <InvoiceCard invoice={inv} key={inv.id} />;
         }}
+        fallback={
+          <div className={styles.invoice_empty}>
+            <img src="/assets/illustration-empty.svg" alt="empty invoices" />
+            <div className={styles.empty_list_description}>
+              <Text as="p" size="text-lg">
+                There is nothing here
+              </Text>
+              <Text color="grey" align="center">
+                Create a new invoice by clicking the New Invoice button and get
+                started
+              </Text>
+            </div>
+          </div>
+        }
       />
-      {/* )} */}
     </div>
   );
 };

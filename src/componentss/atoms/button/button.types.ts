@@ -6,6 +6,7 @@ export interface ButtonProps {
     variant?: ButtonVariant;
     size?: ButtonSizes;
     icon?: string;
-    onClick: () => void;
+    onClick?: () => void;
     type?: "button" | "submit" | "reset";
+    disabled?: boolean;
 }

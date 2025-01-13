@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 719px;
+  height: 100vh;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: -719px;
+  transition: left 0.3s ease-in-out;
+  border-radius: 0px 20px 20px 0px;
+
+  z-index: 100;
+}
+
+.form_body {
+  padding: 56px;
+  gap: 34px;
+}
+
+.form_overlay.open {
+  content: "";
+  width: 100dvw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.4984;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+[data-theme="light"] .form {
+  background-color: #fff;
+}
+
+[data-theme="dark"] .form {
+  background: #141625;
+}
+
+.form.open {
+  left: 0;
+}

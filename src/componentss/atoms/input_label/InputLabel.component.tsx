@@ -8,13 +8,17 @@ const InputLabel: React.FC<InputLabelProps> = ({
   error,
   id,
   isStyled = true,
+  labelLg = false,
 }) => {
   return (
     <div className={styles.label_container}>
       {label && (
-        <label htmlFor={id} className={styles.label}>
+        <label
+          htmlFor={id}
+          className={`${styles.label} ${labelLg && styles.label_lg}`}
+        >
           <Text color="theme-grey">{label}</Text>
-          {error && <Text>{error}</Text>}
+          {error && <Text color="error">{error}</Text>}
         </label>
       )}
       <div className={isStyled ? styles.content : styles.width}>{input}</div>

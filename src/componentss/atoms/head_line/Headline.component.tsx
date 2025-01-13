@@ -5,12 +5,11 @@ import styles from "./head_line_styles.module.css";
 const Headline: React.FC<PropsWithChildren<HeadLineProps>> = ({
   children,
   as = "h1",
-  color = "base-black",
   className = "",
   weight = "weight-400",
 }) => {
   const Element = as;
-  const classes = [`text-${color}`, weight, className]
+  const classes = [ weight, className]
     .filter(Boolean)
     .join(" ");
 

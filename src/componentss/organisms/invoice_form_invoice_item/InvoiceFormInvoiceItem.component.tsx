@@ -21,7 +21,6 @@ const InvoiceFormInvoiceItem: React.FC<InvoiceItemProps> = ({
   watch(`items.${index}.price`);
 
   const computeTotalValue = (defaultValue: number | undefined) => {
-    console.log(getValues());
     return getValues()?.items &&
       !isNaN(Number(getValues().items[index].price)) &&
       !isNaN(Number(getValues().items[index].quantity))
@@ -30,86 +29,87 @@ const InvoiceFormInvoiceItem: React.FC<InvoiceItemProps> = ({
       : defaultValue;
   };
   return (
-    <>
-      <tr key={id} className={styles.lg}>
-        <td>
-          <InputLabel
-            label=""
-            error={errors.items?.[index]?.name?.message}
-            input={
+    <tr key={id} className={styles.invoice_item}>
+      <td>
+        <InputLabel
+          label="Item Name"
+          labelLg={true}
+          error={errors.items?.[index]?.name?.message}
+          input={
+            <input
+              {...register(`items.${index}.name`, {
+                required: "Item name is required",
+              })}
+              id={`items.${index}.name`}
+            />
+          }
+        />
+      </td>
+      <td>
+        <InputLabel
+          label="Qty."
+          id={`items.${index}.quantity`}
+          labelLg={true}
+          error={errors.items?.[index]?.quantity?.message}
+          input={
+            <input
+              min={1}
+              type="number"
+              {...register(`items.${index}.quantity`, {
+                required: "Quantity is required",
+              })}
+              id={`items.${index}.quantity`}
+            />
+          }
+        />
+      </td>
+      <td>
+        <InputLabel
+          id={`items.${index}.price`}
+          label="Price"
+          labelLg={true}
+          error={errors.items?.[index]?.price?.message}
+          input={
+            <input
+              type="number"
+              step="0.001"
+              {...register(`items.${index}.price`, {
+                required: "Price is required",
+              })}
+              id={`items.${index}.price`}
+            />
+          }
+        />
+      </td>
+      <td>
+        <InputLabel
+          label="Total"
+          isStyled={false}
+          labelLg={true}
+          error={errors.items?.[index]?.total?.message}
+          input={
+            <div>
               <input
-                {...register(`items.${index}.name`, {
-                  required: "Item name is required",
-                })}
-                id={`items.${index}.name`}
-              />
-            }
-          />
-        </td>
-        <td>
-          <InputLabel
-            label=""
-            error={errors.items?.[index]?.quantity?.message}
-            input={
-              <input
-                min={1}
                 type="number"
-                {...register(`items.${index}.quantity`, {
-                  required: "Quantity is required",
+                hidden
+                step="0.001"
+                {...register(`items.${index}.total`, {
+                  required: "Total is required",
+                  value: computeTotalValue(undefined),
                 })}
-                id={`items.${index}.quantity`}
+                id={`items.${index}.total`}
               />
-            }
-          />
-        </td>
-        <td>
-          <InputLabel
-            label=""
-            error={errors.items?.[index]?.price?.message}
-            input={
-              <input
-                type="number"
-                {...register(`items.${index}.price`, {
-                  required: "Price is required",
-                })}
-                id={`items.${index}.price`}
-              />
-            }
-          />
-        </td>
-        <td>
-          <InputLabel
-            label=""
-            isStyled={false}
-            error={errors.items?.[index]?.total?.message}
-            input={
-              <div>
-                <input
-                  type="number"
-                  hidden
-                  {...register(`items.${index}.total`, {
-                    required: "Total is required",
-                    value: computeTotalValue(undefined),
-                  })}
-                  id={`items.${index}.total`}
-                />
-                {convertToCurrency(computeTotalValue(0) as number).substring(1)}
-              </div>
-            }
-          />
-        </td>
-        <td className={styles.action}>
-          <button type="button" onClick={handleDelete}>
-            <img src="/assets/icon-delete.svg" alt="delete" />
-          </button>
-        </td>
-      </tr>
-      {/* <InvoiceFormInvoiceItemMobile
-        index={index}
-        handleDelete={handleDelete}
-        id={id}
-      /> */}
-    </>
+              {convertToCurrency(computeTotalValue(0) as number).substring(1)}
+            </div>
+          }
+        />
+      </td>
+      <td className={styles.action}>
+        <button type="button" onClick={handleDelete}>
+          <img src="/assets/icon-delete.svg" alt="delete" />
+        </button>
+      </td>
+    </tr>
   );
 };
 

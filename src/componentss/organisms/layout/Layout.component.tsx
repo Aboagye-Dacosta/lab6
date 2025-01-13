@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
+import { Outlet } from "react-router-dom";
 import { getTheme } from "../../../store/slice/app_theme_slice";
 import { useAppSelector } from "../../../store/store_hooks";
-import AppOutlet from "../app_outlet/AppOutlet.component";
-import Header from "../header/Header.component";
 import styles from "./layout_styles.module.css";
+import AuthProvider from "../../../provider/auth_provider/AuthProvider";
 
 const Layout: React.FC = () => {
   const ref = useRef(null);
@@ -17,10 +17,11 @@ const Layout: React.FC = () => {
   }, [theme]);
 
   return (
-    <div id="theme" className={styles.layout} ref={ref} data-theme={theme}>
-      <Header />
-      <AppOutlet />
-    </div>
+    <AuthProvider>
+      <div id="theme" className={styles.layout} ref={ref} data-theme={theme}>
+        <Outlet />
+      </div>
+    </AuthProvider>
   );
 };
 

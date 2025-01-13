@@ -4,7 +4,6 @@ import {
 } from "../../../store/slice/app_invoice_filter_slice";
 import { getInvoices } from "../../../store/slice/app_invoice_slice";
 import {
-  getFormState,
   setFormActionType,
   toggleForm,
 } from "../../../store/slice/form_manager_slice";
@@ -23,7 +22,6 @@ const InvoiceListHeader: React.FC = () => {
   const dispatch = useAppDispatch();
   const { filters } = useAppSelector(getFilters);
   const invoices = useAppSelector(getInvoices);
-  const formState = useAppSelector(getFormState);
 
   const size = filterByProperty(invoices, "status", filters).length;
   const filterSize = filters.length;
@@ -43,10 +41,8 @@ const InvoiceListHeader: React.FC = () => {
   };
 
   const handleOpenOrCloseForm = () => {
+    dispatch(setFormActionType(FormActionType.CREATE));
     dispatch(toggleForm());
-    if (formState == "closed") {
-      dispatch(setFormActionType(FormActionType.CREATE));
-    }
   };
 
   return (

@@ -3,6 +3,8 @@ import Layout from "../componentss/organisms/layout/Layout.component";
 import InvoiceDetail from "../views/InvoiceDetail";
 import InvoiceListings from "../views/InvoiceListings";
 import { routes } from "./routes";
+import LoginPage from "../views/loginPage";
+import HomeLayout from "../componentss/organisms/home_layout/HomeLayout.component";
 
 export const router = createBrowserRouter([
   {
@@ -15,11 +17,21 @@ export const router = createBrowserRouter([
       },
       {
         path: routes.invoices,
-        element: <InvoiceListings />,
+        element: <HomeLayout />,
+        children: [
+          {
+            path: routes.invoices,
+            element: <InvoiceListings />,
+          },
+          {
+            path: routes.invoiceById,
+            element: <InvoiceDetail />,
+          },
+        ],
       },
       {
-        path: routes.invoiceById,
-        element: <InvoiceDetail />,
+        path: routes.login,
+        element: <LoginPage />,
       },
     ],
   },

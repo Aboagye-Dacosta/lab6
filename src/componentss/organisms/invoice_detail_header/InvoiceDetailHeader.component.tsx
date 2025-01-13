@@ -5,7 +5,12 @@ import {
   getInvoiceById,
 } from "../../../store/slice/app_invoice_slice";
 import { getTheme } from "../../../store/slice/app_theme_slice";
+import {
+  setFormActionType,
+  toggleForm,
+} from "../../../store/slice/form_manager_slice";
 import { useAppDispatch, useAppSelector } from "../../../store/store_hooks";
+import { FormActionType } from "../../../store/types/form_manager_slice.types";
 import { ProductStatus } from "../../../types/invoice_item.types";
 import Badge from "../../atoms/badge/Badge.component";
 import { BadgeState } from "../../atoms/badge/badge.types";
@@ -30,6 +35,11 @@ const InvoiceDetailHeader: React.FC = () => {
     navigate("/");
   };
 
+  const handleEditInvoice = () => {
+    dispatch(setFormActionType(FormActionType.EDIT));
+    dispatch(toggleForm());
+  };
+
   return (
     <Container>
       <div className={styles.invoice_detail_header}>
@@ -38,7 +48,7 @@ const InvoiceDetailHeader: React.FC = () => {
           <Badge state={invoiceStatus as BadgeState} />
         </div>
         <div className={styles.actions}>
-          <Button size="small" variant="default" onClick={() => {}}>
+          <Button size="small" variant="default" onClick={handleEditInvoice}>
             Edit
           </Button>
           <Button
@@ -63,7 +73,7 @@ const InvoiceDetailHeader: React.FC = () => {
           onClose={() => setIsDeleteInvoice(false)}
         >
           <DeleteCard
-            theme="light"
+            theme={theme}
             onClose={() => setIsDeleteInvoice(false)}
             invoiceId={invoiceId as string}
             onDelete={handleDeleteInvoice}
